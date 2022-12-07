@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Login</title>
+    <script src="text/javascript"></script>
+</head>
+
+<body>
+    <div class="login-page">
+        <p>ADMIN LOGIN</p>
+
+        <form action="#" class="form">
+            <p  class="eml">Email</p>
+            <input  id="Email"type="email" style="border: white;">
+            <p   class="pas">Password</p>
+            <input  id="Password" type="password" style="border: white;">
+
+        </form>
+        <div class="buttons">
+            <a class="button" onclick="checkPassword()">LOGIN</a>
+            <a class="forgot" href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        
+    </div>
+</body>
+<script>
+    function checkPassword(){
+        var email = document.getElementById("Email").value;
+        var password = document.getElementById("Password").value;
+        if (email== "admin@gmail.com" && password=="123456789") {
+            window.location.assign("adminform.html");
+            console.log("login successful");
+        } else {
+            alert("invalid credentials");
+            return;
+        }
+    }
+    </script>
+
+</html>

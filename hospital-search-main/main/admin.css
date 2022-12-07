@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel:wght@600&family=Monoton&family=Poppins:wght@100;200;400;500;600;800&family=Satisfy&display=swap');
+*{
+    font-family: "Poppins",sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.login-page {
+    border-radius: .2rem;
+    margin-top: 10.6%;
+    margin-left: 34%;
+    margin-right: 34%;
+    padding: 2rem 3rem;
+    background-color: #2348f0;
+}
+
+p {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    color: white;
+}
+
+p.eml {
+    font-size: 16px;
+    margin-bottom: -7px;
+}
+
+p.pas {
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: -7px;
+}
+
+p.rem {
+    font-size: 16px;
+    /* padding: .2rem; */
+    margin: 6px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons .button {
+    background: #f75842;
+    text-align: center;
+    margin-top: 1rem;
+    padding: .3rem;
+    border-radius: .2rem;
+    color: white;
+    text-decoration: none;
+}
+
+input {
+    padding: .36rem;
+    border-radius: .2rem;
+    margin-top: .6rem;
+}
+.buttons{
+    margin-top: .6rem;
+    margin-bottom: 2rem;
+}
+.buttons .forgot {
+    margin-top: .2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    text-decoration: underline;
+}
+
+.login-page .api {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1.2rem;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+p.break {
+    font-size: 16px;
+    text-align: center;
+}
+
+.row{
+    border: 2px solid black;
+}
+
+input {
+    border: 2px solid black;
+    border-radius: none;
+    margin-left: 0rem;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 23.6rem;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input .form-control{
+    display: flex;
+    justify-content: center;
+}
+
+.form-group{
+    display: flex;
+}
+
+.panel-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.6rem;
+}
+
+.panel-body{
+    padding: 5rem;
+}
+
+div.sub-button{
+    display: flex;
+    justify-content: center;
+}
+
+/* For tablets */
+
+@media screen and (max-width: 1024px) {
+    .login-page {
+        margin-top: 5%;
+        margin-left: 34%;
+        margin-right: 34%;
+        padding: 1rem 2rem;
+    }
+}
+
+/* For Mobile */
+
+@media screen and (max-width: 600px) {
+    .login-page {
+        margin-top: 40%;
+        margin-left: 2%;
+        margin-right: 2%;
+        padding: 1rem 2rem;
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Hospital Info. Form</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">AROGAYA</div>
+            <ul class="links">
+                <li><a href="index.html" class="nav-links">home</a></li>
+                <li><a href="hospital.html" class="nav-links">hospitals</a></li>
+                <li><a href="" class="nav-links">Doctors</a></li>
+                <li><a href="" class="nav-links">about</a></li>
+                <li><a href="" class="nav-links">blogs</a></li>
+                <!-- <li><a href="" class="nav-links">blogs</a></li> -->
+                <div class="contact">
+                    <a href="" class="btn">contact</a>
+                </div>
+            </ul>
+            <input type="checkbox" id="check">
+            <label for="check" class="ham-bar">
+                <i class="uil uil-bars hamburger"></i>
+            </label>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div id="signupbox" style="margin-top:50px"
+                class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">ADD Hospital</div>
+                    </div>
+                    <div class="panel-body">
+                        <form action="/" id="EmployeeForm" class="form-horizontal" method="post" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-3 control-label">Name:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="uname"
+                                        placeholder="Enterthe hospital name" style="margin-left: 10rem;">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label">Rating:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="email" placeholder="Rate the Hospital"
+                                        style="margin-left: 9.8rem;">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="password" class="col-md-3 control-label">Specialty:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="hrlyrate"
+                                        placeholder="hospital's Multi-Speciality" style="margin-left: 8.5rem;">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="icode" class="col-md-3 control-label">Address:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="ttlhr" placeholder="Enter the Address"
+                                        style="margin-left: 9.2rem;">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="icode" class="col-md-3 control-label">Website:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="ttlhr" placeholder="Enter the website"
+                                        style="margin-left: 9.2rem;">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="icode" class="col-md-3 control-label">Gmap:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="ttlhr" placeholder="google map link"
+                                        style="margin-left: 10rem;">
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="sub-button">
+                                <input type="submit" name="submit" value="submit" id="submit-button"
+                                    class="btn btn-primary button"
+                                    style="width: 8rem; border-radius: 8px; border:none; margin-top: 3rem;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1212 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel:wght@600&family=Monoton&family=Poppins:wght@100;200;400;500;600;800&family=Satisfy&display=swap');
+
+/* 
+font-family: 'Abril Fatface', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Monoton', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Satisfy', cursive;
+*/
+
+
+/* default styling */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins",sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* reusable CSS */
+.container{
+    position: relative;
+
+    margin: 0 auto;
+    padding: 0 3.25rem;
+
+    width: 100%;
+    max-width: 75rem;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+
+    text-transform: capitalize;
+    font-size: .8rem;
+}
+
+.btn{
+    background-color: #2349f0;
+    color: white;
+    font-weight: 600;
+    letter-spacing: .8px;
+    white-space: nowrap;
+
+    padding: .85rem 1.85rem;
+
+    border-radius: 5px;
+}
+
+/* .btn.secondary-btn{
+    border: 1px solid #2348f0; */
+    /* background-color: transparent; */
+    /* color: #2348f0;
+} */
+
+
+h1.heading{
+    position: relative;
+    font-size: 2.25rem;
+    text-transform: capitalize;
+}
+
+h1.heading::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    height: 6px;
+    border-radius: 20px;
+    background-color: #2348f0;
+    transform: translate(0,7px);
+}
+
+h1.head-title{
+    text-transform: capitalize;
+    color: white;
+    letter-spacing: 1px;
+}
+
+h1.head-title.b{
+    font-family: "Abril Fatface",cursive;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.about-grid,.expert-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 4rem;
+    height: 100%;
+    max-height: 30rem;
+}
+
+.about-text,.mission-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-img,.expert-img{
+    position: relative;
+    height: 100%;
+    max-height: inherit;
+}
+
+.about-img::before,.about-img::after,
+.expert-img::before,.expert-img::after{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 1.5rem;
+    background-color: #2348f0;
+    z-index: -1;
+}
+
+.about-img::before,.expert-img::before{
+    top: 0;
+    left: 0;
+    transform: translate(-15px,-15px);
+}
+
+.about-img::after,.expert-img::after{
+    bottom: 0;
+    right: 0;
+    transform: translate(15px,15px);
+}
+
+
+:is(.about-img,.expert-img) > img{
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(211, 211, 211, 0.7);
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* header styling */
+
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+
+.logo{
+    z-index: 2;
+    padding: 0 1.5rem;
+    font-family: 'Cinzel',serif;
+    font-size: 2.5rem;
+    color: #2348f0;
+}
+
+nav.container{
+    height: 110px;
+    /* line-height: 90px; applying line height as 90px would make the content take up the entire chunk*/
+    /* open dev tools and apply to understand */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;}
+
+.links{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    /* max-width: 30rem; */
+    max-width: 52rem;
+
+    /* width: inherit;  inherits the witdth of the container  */
+    /* you can also chose -webkit-fill-available */
+
+}
+
+
+.links > *{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links{
+    /* padding: 0 1.5rem; */
+    text-transform: capitalize;
+    /* margin: 0 .35rem; */
+}
+
+nav.container .contact{
+    margin: 2rem;
+}
+
+.ham-bar{
+    z-index: 2;
+    display: none;
+    font-size: 2.5rem;
+    color: #2348f0;
+    cursor: pointer;
+    line-height: 110px;
+}
+
+#check{
+    display: none;
+}
+
+/* landing page CSS */
+
+section.landing-page{
+    margin: 0 auto; /* the section now stays in the middle of the page */
+
+    width: 100%;
+    /* max-width: 84.375rem; */
+    max-width: 94.375rem; /* when page zoom is .8*/
+
+
+    background-image: linear-gradient(rgba(33, 59, 176, 0.7),rgba(33, 59, 176, 0.7)),url('images/landing-page-1.jpg.jpg');
+    background-position: center;
+    background-size: cover;
+}   
+
+.landing-page .container{
+    height: 100%;
+    max-height: 40rem;
+}
+
+.landing-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 2rem;
+
+    height: 40rem;
+    max-height: inherit; /* it inherits the max-height property of it's parent container */
+}
+
+.landing-text{
+    display: flex;
+    flex-flow: column;
+    height: 25rem
+}
+
+.landing-text > h1.heading{
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.landing-text > h1.heading::after{
+    display: none;
+}
+
+.landing-text > p.text{
+    color: whitesmoke;
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.landing-text .contact{
+    /* here the .contact class has a display of flex whith flex-flow as row, so to set the items on a vertical plane we use align and on horizontal plane we use justify */
+    margin: 1rem 0;
+}
+
+.landing-text .contact > .btn{
+    border: 1px solid white;
+    background-color: white;
+    color: #2348f0;
+
+    margin-right: 1.5rem;
+}
+
+.landing-text .contact > .btn.secondary-btn{
+    background-color: transparent;
+    color: white;
+}
+
+.landing-image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.landing-image > img{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: -180px 0px;
+}
+
+
+.landing-flex{
+    position: relative;
+    top: -5.75rem;
+    z-index: 1;
+    scale: .95;
+    display: flex;
+    justify-content: center;
+}
+
+.landing-flex-cards{
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 20px rgb(211, 211, 211);
+    border-radius: 5px;
+}
+
+.landing-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    
+    width: 15rem;
+    padding: 1.75rem 0;    
+    /* border: 1px solid black; */
+}
+
+p.title{
+    font-size: .85rem;
+    font-weight: 600;
+    color: rgb(93, 93, 93);
+    padding: .35rem 0;
+    text-transform: capitalize;
+}
+
+.denomination{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgb(35, 72, 240);
+}
+
+.denomination span{
+    position: absolute;
+    font-size: 2.25rem;
+    top: 2px;
+}
+
+.card-icon{
+    width: 100%;
+    max-width: 50px;
+}
+
+/* about CSS */
+
+.about-section{
+    padding: 12rem 0 4rem 0;
+}
+
+:is(.about-text,.mission-text) p.text{
+    color: rgb(100, 100, 100);
+    padding-top: 2rem;
+}
+
+.check-box{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+}
+.check-box > *{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.check-box img{
+    margin-right: 1rem;
+    max-width: 2rem;
+}
+
+/* service CSS */
+
+.service-section{
+    padding: 3rem 0;
+}
+
+.service-section .container{
+    display: flex;
+    flex-direction: column;    
+}
+
+.service-cards{
+    margin: 3rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(250px,1fr));
+    gap: 1.25rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.service-cards > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    /* when working with large text , to align them at center we use the CSS 
+    shorthand text-align instead of align-items */
+
+    border: 1px solid rgba(185, 185, 185, 0.438);
+    border-radius: .75rem;
+    padding: 1.5rem .75rem;
+    box-shadow:  0 0 10px rgb(187, 187, 187);
+    background-color: #2348f0;
+    color: whitesmoke;
+}
+
+.srv-card p.text{
+    font-size: .75rem;
+    padding: .35rem 1rem 1rem;
+}
+
+.srv-card img{
+    display: block;
+    width: 100%;
+    max-width: 80px;
+    padding: .7rem 0;
+}
+
+:is(.srv-card:nth-child(5),.srv-card:nth-child(6)) img{
+    max-width: 65px;
+    padding: 1.1rem 0;
+}
+
+/* experties CSS */
+
+.experties{
+    padding: 4rem 0;
+}
+
+.expert-grid{
+    margin: 3rem 0 0;
+}
+
+.expert-cards{
+    margin: 4rem 0;
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    /* grid-template-columns: repeat(3,250px); */
+    align-items: center;
+    /* justify-self: center; */
+    justify-content: center;
+    flex: 1;
+}
+
+.exp-card{
+    background-color: whitesmoke;
+
+    border-radius: 1rem;
+    /* border: 1px solid rgba(30, 91, 196, 0.098); */
+    border: 1px solid #2349f03d;
+    box-shadow:  0 0 10px rgba(185, 185, 185, 0.438);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 370px;
+    padding: 1.75rem 2rem;
+}
+
+.exp-card > h1.head-title.b{
+    font-size: 1.3rem;
+    font-family: "Poppins",sans-serif;
+    padding: 2rem 0 0;
+}
+
+.exp-card > p.text{
+    padding: 1rem 0;
+    text-align: center;
+}
+.exp-card-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 10px solid rgb(174, 197, 221);
+    background-color: #2348f0;
+    width: 80px;
+    padding: 9px;
+}
+
+/* doctors CSS */
+
+.doctors{
+    padding: 2rem 0 5rem;
+}
+
+.doctors .container{
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-cards{
+    margin: 4rem 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    white-space: nowrap;
+    flex: 1;
+}
+.doctor-cards > *{
+    background-color: whitesmoke;
+    width: 100%;
+    border-radius: 1.2rem;
+    /* padding: 1.25rem; */
+    box-shadow:  0 0 10px rgba(185, 185, 185, 0.438);
+    border: 1px solid rgba(30, 91, 196, 0.098);
+}
+
+.designation{
+    padding: 0;
+}
+.doc-card > img{
+    border-radius: .65rem;
+    object-fit: cover;
+    aspect-ratio: 1/1.2;
+    object-position: center;
+    z-index: 1;
+}
+
+.designation{
+    padding: 1.25rem 0;
+}
+
+/* .doc-card > *:nth-child(2){
+    padding: 1.25rem 0;
+} */
+
+.doctors .contact{
+    display: flex;
+    justify-content: center;
+}
+
+/* blogs CSS */
+
+.blogs{
+    background-color: #d8ecff74;
+    padding: 4rem 0;
+}
+
+.blog-cards{
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-crd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 1rem;
+    height: 100%;
+    max-height: 40rem;
+}
+
+.blog-crd > img{
+    box-shadow:  0 0 10px rgba(185, 185, 185, 0.438);
+    border: 1px solid rgba(30, 91, 196, 0.098);
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: top;
+    max-height: 17rem;
+    aspect-ratio: 1.5/1.7;
+}
+
+.blog-content{
+    padding: 1rem .85rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* important to keep the height of all the cards same*/
+}
+
+.blog-content h1{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.blog-content p.text{
+    padding: .75rem 0;
+    border-bottom: 1px solid  rgba(170, 170, 170, 0.6);
+}
+
+.read-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.read-time > *{
+    white-space: nowrap;
+    color: #2348f0;
+    text-transform: capitalize;
+}
+
+/* news CSS */
+
+.news{
+    padding: 5rem;
+}
+
+.news .container{
+    max-width: 65rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow:  0 0 10px #b9b9b970;
+    border: 1px solid rgba(30, 91, 196, 0.098);
+}
+
+.news-cont{
+    max-width: 30rem;
+}
+
+.news-cont > h1.head-title.b{
+    font-size: 1.75rem;
+}
+
+.news form{
+    /* border: 1px solid black; */
+    display: flex;    
+    padding: .35rem;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+input{
+    border: 0px;
+    border-radius: 1rem;
+}
+input[type="email"]{
+    padding: 1.2rem;
+    max-width: 18rem;
+    background-color: whitesmoke;
+    margin-right: 1rem;
+    font-size: .95rem;
+}
+input[type="email"]:focus{
+    outline: none;
+}
+
+input[type="submit"]{
+    border-radius: 1rem;
+    text-transform: capitalize;
+    font-family: "Poppins",sans-serif;
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+/* Footer  */
+footer {
+    background: #2348f0;
+    color: white;
+    padding-top: 4rem;
+    font-size: 1rem;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+}
+.footer__container{
+    margin-bottom: 4rem;
+}
+.footer__container>div h4 {
+    margin-bottom: 1.2rem;
+    color: white;
+}
+
+
+footer__1 p {
+    margin: 0 2rem;
+}
+
+.footer__2 .foot{
+    color: wheat;
+}
+
+footer ul li {
+    margin-bottom: 0.7rem;
+}
+
+footer ul li a :hover {
+    text-decoration: underline;
+}
+
+.footer__copyright {
+    text-align: center;
+    /* margin-top: 3rem; */
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--color-bg2);
+}
+
+hr{
+    border: 0.1px solid white;
+}
+
+
+.hospital-grid{
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px,1fr));
+    gap: 2rem;  
+    height: 40rem;  
+}
+
+.hospital-card{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 3rem 0;
+    border-radius: .85rem;
+    box-shadow: 0 0 10px rgba(211, 211, 211, 0.7);
+
+}
+
+.hospital-card:nth-child(1){
+    background-image: url("images/mul-spec.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.hospital-card:nth-child(2){
+    background-image: url("images/government.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.hospital-card:nth-child(3){
+    background-image: url("images/affordable.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.hospital-card:nth-child(4){
+    background-image: url("images/high-end.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+h1.hospital.heading{
+    color: white;
+    padding-top: 3rem;
+} 
+h1.hospital.heading::after{
+    display: none;
+}
+
+h1.hospital.heading{
+    color: white;
+    padding-top: 3rem;
+} 
+h1.hospital.heading::after{
+    display: none;
+}
+
+
+.multispec-search{
+    margin: 3rem 0;
+    display: flex;
+    padding: 0 3rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.multispec-search form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    border-radius: 10rem;
+    border: 1px solid rgba(218, 216, 216, 0.431);
+}
+
+.search-icon{
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input[type="search"]{
+    /* border: 1px solid rgba(218, 216, 216, 0.431); */
+    width: 100%;
+    max-width: 22rem;
+    height: 2.25rem;
+    border-radius: 10rem;
+    padding: 1.25rem;
+    font-family: "Poppins",sans-serif;
+}
+
+
+h1.m-s.heading{
+    font-size: 1.85rem;
+    color: #2348f0;
+}
+h1.m-s.heading::after{
+    display: none;
+}
+
+.hospital-container{
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hospital-tag{
+    background-color: whitesmoke;
+    margin: 0 3rem;
+    display: flex;
+    border-radius: 1rem;
+    z-index: 2;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.hospital-head{
+    width: -webkit-fill-available;
+    padding: 1.25rem 2rem;
+}
+
+.drop-down{
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    font-size: 3rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hospital-head > h1.head-title{
+    color: #2348f0;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.hospital-img{
+    width: 20rem;
+    max-height: 10rem;
+}
+.hospital-img > img{
+    border-radius: 1rem  0 0 1rem;
+    
+}
+
+.add-more{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: .55rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: #2348f0;
+}
+
+i.uil .uil-plus .add-more{
+    margin-bottom: 3rem;
+}
+
+.hospital-tag{
+    background-color: whitesmoke;
+    margin: 0 3rem;
+    display: flex;
+    border-radius: 1rem;
+    z-index: 2;
+}
+
+.hospital-head{
+    width: -webkit-fill-available;
+    padding: 1.25rem 2rem;
+}
+
+.drop-down{
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    font-size: 3rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hospital-head > h1.head-title{
+    color: #2348f0;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.hospital-img{
+    width: 20rem;
+}
+.hospital-img > img{
+    border-radius: 1rem  0 0 1rem;
+}
+
+.add-more{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: .55rem;
+    margin: 0 auto;
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: #2348f0;
+}
+
+/* media queries */
+
+@media(max-width: 768px){
+
+    h1.heading{
+        font-size: 2rem;
+    }
+
+    h1.head-title{
+        font-size: 1.35rem;
+    }
+
+    h1.head-title.b{
+        font-size: 1.5rem;
+    }
+
+    .logo{
+        font-size: 1.85rem;
+    }
+    
+    nav.container{
+        flex-wrap: wrap;
+    }
+
+    .ham-bar{
+        padding-right: 2rem;
+        display: block;
+        order: 2;
+    }
+/* 
+    #check:checked ~ .links{
+    } */
+
+    .links{
+        border-top: 1px solid #9daebf74;
+        position: relative;
+        transform: translateY(-10rem);
+        max-width: 36rem;
+        margin: 0 auto;
+        z-index: 1;
+        background-color: white;
+        order: 3;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transition: .5s;
+    }
+    .links > li{
+        padding-top: 2rem;
+    }
+    
+    nav.container .contact{
+        align-items: center;
+    }
+
+    .landing-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .landing-text .contact{
+        justify-content: center;
+    }
+
+    .landing-flex{
+        top: -9rem;
+    }
+    .landing-flex-cards{
+        display: grid;
+        grid-template-columns: repeat(2,minmax(150px,1fr));
+    }
+
+    .denomination,.denomination span{
+        font-size: 1.85rem;
+    }
+
+    .denomination span{
+        padding-left: .15rem;
+        top: -1px;
+    }
+
+    .landing-image{
+        display: none;
+    }
+
+    .about-section{
+        padding: 20rem 0 5rem;
+    }
+
+    .about-grid,.expert-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .about-img,.expert-img{
+        display: none;
+    }
+
+    :is(.about-text,.mission-text) p.text{
+        text-align: center;
+    }
+    .check-box{
+        padding: 2.3rem 0 3.5rem;
+        flex-direction: row;
+        justify-content: center;
+        font-size: .85rem;
+    }
+    .check-box > *{
+        padding: 0 1rem;
+    }
+    .check-box img{
+        max-width: 1.5rem;
+        margin-right: .65rem;
+    }
+    .about-text .contact{
+        justify-content: center;
+    }
+
+
+
+    .service-section{
+        padding: 5rem 0 0rem;
+    }
+    .service-cards{
+        margin: 2rem 0 0;
+        scale: .95;
+        grid-template-columns: repeat(2,minmax(250px,300px));
+        gap: 1.55rem
+    }
+    .srv-card{
+        padding: 3.2rem 0;
+    }
+
+    .srv-card img{
+        scale: 1.25;
+        padding-bottom: 2rem;
+    }
+
+    :is(.srv-card:nth-child(5),.srv-card:nth-child(6)) img{
+        padding-bottom: 2rem;
+    }
+
+    .srv-card p.text{
+        display: none;
+    }
+
+
+    .doctors{
+        padding: 2rem 0;
+    }
+
+    .doctor-cards{
+        margin:4rem 0;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        gap: 3rem;
+        padding: 0 1.25rem;
+        /* scale: .85; */
+    }
+
+    .doc-card > img{
+        max-height: 30rem;
+        border-radius: 1.2rem 1.2rem 0 0;
+    }
+
+    .doc-card{
+        max-width: 37rem;
+    }
+
+    .doc-card:nth-child(2) > img{
+        object-position: 0 -2rem;
+    }
+
+    .designation{
+        padding: 1.25rem 2rem;
+    }
+
+    .designation h1.head-title.b{
+        font-size: 1.2rem;
+    }
+    .designation p.title{
+        font-size: .75rem;
+    }
+
+    .doctors .contact{
+        display: none;
+    }
+
+
+    .experties{
+        padding: 0 0 6rem;
+    }
+    .expert-cards{
+        flex-direction: column;
+    }
+
+    .exp-card{
+        max-width: 400px;
+    }
+
+
+    .blog-cards{
+        margin: 4rem 0;
+        grid-template-columns: 1fr;
+        padding: 0 1.25rem;
+    }
+
+    .blog-content h1.head-title.b{
+        font-size: 1.2rem;
+    }
+    .blog-content p.text{
+        font-size: .75rem;
+    }
+
+    .read-time{
+        font-size: .75rem;
+    }
+
+
+    .news .container{
+        flex-direction: column;
+    }
+
+    .news form{
+        scale: .75;
+    }
+    .footer__container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+    .footer__copyright{
+        font-size: 1rem;
+    }
+    .footer__container .footer__3{
+        margin-bottom: 2rem;
+    }
+    .footer__container .footer__1 p{
+        padding: 1rem;
+    }
+}   
+
+
+
+
+
+
+
+
